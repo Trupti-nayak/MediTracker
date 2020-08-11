@@ -15,15 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         application.applicationIconBadgeNumber = 0
-        let notificationCenter = UNUserNotificationCenter.current()
-        let options: UNAuthorizationOptions = [.alert,.sound,.badge]
-        notificationCenter.delegate = self
-        notificationCenter.requestAuthorization(options: options) { (allow, error) in
-            if !allow{
-                debugPrint("Use declined notification access")
-            }
-        }
+//        let notificationCenter = UNUserNotificationCenter.current()
+//        let options: UNAuthorizationOptions = [.alert,.sound,.badge]
+//        notificationCenter.delegate = self
+//        notificationCenter.requestAuthorization(options: options) { (allow, error) in
+//            if !allow{
+//                debugPrint("Use declined notification access")
+//            }
+//        }
         return true
     }
 

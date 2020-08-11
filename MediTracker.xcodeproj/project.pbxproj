@@ -16,6 +16,9 @@
 		C748822024DBE6A400EB1AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C748821E24DBE6A400EB1AEC /* LaunchScreen.storyboard */; };
 		C748822824DBE8ED00EB1AEC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C748822724DBE8ED00EB1AEC /* HistoryViewController.swift */; };
 		C748822A24DC256800EB1AEC /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C748822924DC256800EB1AEC /* HistoryTableViewCell.swift */; };
+		C74AB4FC24E189D4007296F0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74AB4FB24E189D4007296F0 /* Utilities.swift */; };
+		C74AB50224E282A7007296F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74AB50124E282A7007296F0 /* Constants.swift */; };
+		C74AB50624E2970E007296F0 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74AB50524E2970E007296F0 /* LocalNotificationManager.swift */; };
 		C78D0E7924DFAE4000C0FEF5 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D0E7824DFAE4000C0FEF5 /* DBManager.swift */; };
 		C78D0E7C24DFB78300C0FEF5 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D0E7B24DFB78300C0FEF5 /* TodayViewModel.swift */; };
 		C78D0E7E24DFDC5800C0FEF5 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D0E7D24DFDC5800C0FEF5 /* HistoryViewModel.swift */; };
@@ -36,7 +39,7 @@
 		C748820D24DBE6A200EB1AEC /* MediTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C748821024DBE6A200EB1AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C748821224DBE6A200EB1AEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C748821424DBE6A200EB1AEC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = MediTracker/TodayViewController.swift; sourceTree = SOURCE_ROOT; };
+		C748821424DBE6A200EB1AEC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = MediTracker/ViewControllers/TodayViewController.swift; sourceTree = SOURCE_ROOT; };
 		C748821724DBE6A200EB1AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C748821A24DBE6A200EB1AEC /* MediTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediTracker.xcdatamodel; sourceTree = "<group>"; };
 		C748821C24DBE6A400EB1AEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +47,10 @@
 		C748822124DBE6A400EB1AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C748822724DBE8ED00EB1AEC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C748822924DC256800EB1AEC /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		C78D0E7824DFAE4000C0FEF5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = MediTracker/DBManager.swift; sourceTree = SOURCE_ROOT; };
+		C74AB4FB24E189D4007296F0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		C74AB50124E282A7007296F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C74AB50524E2970E007296F0 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		C78D0E7824DFAE4000C0FEF5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = MediTracker/Database/DBManager.swift; sourceTree = SOURCE_ROOT; };
 		C78D0E7B24DFB78300C0FEF5 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		C78D0E7D24DFDC5800C0FEF5 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		C78D0E8324E1317900C0FEF5 /* MediTrackerTestsDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediTrackerTestsDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,16 +97,14 @@
 		C748820F24DBE6A200EB1AEC /* MediTracker */ = {
 			isa = PBXGroup;
 			children = (
+				C74AB50424E296F2007296F0 /* Notification */,
+				C74AB50324E282C4007296F0 /* Others */,
+				C74AB50024E28202007296F0 /* View */,
+				C74AB4FE24E281D9007296F0 /* ViewControllers */,
+				C74AB4FD24E281C8007296F0 /* ViewModel */,
 				C748821024DBE6A200EB1AEC /* AppDelegate.swift */,
 				C748821224DBE6A200EB1AEC /* SceneDelegate.swift */,
-				C748821424DBE6A200EB1AEC /* TodayViewController.swift */,
-				C78D0E7B24DFB78300C0FEF5 /* TodayViewModel.swift */,
-				C78D0E7824DFAE4000C0FEF5 /* DBManager.swift */,
 				C78D0E7A24DFB0AF00C0FEF5 /* Database */,
-				C748822724DBE8ED00EB1AEC /* HistoryViewController.swift */,
-				C78D0E7D24DFDC5800C0FEF5 /* HistoryViewModel.swift */,
-				C748822924DC256800EB1AEC /* HistoryTableViewCell.swift */,
-				C748821624DBE6A200EB1AEC /* Main.storyboard */,
 				C748821C24DBE6A400EB1AEC /* Assets.xcassets */,
 				C748821E24DBE6A400EB1AEC /* LaunchScreen.storyboard */,
 				C748822124DBE6A400EB1AEC /* Info.plist */,
@@ -109,9 +113,54 @@
 			path = MediTracker;
 			sourceTree = "<group>";
 		};
+		C74AB4FD24E281C8007296F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C78D0E7D24DFDC5800C0FEF5 /* HistoryViewModel.swift */,
+				C78D0E7B24DFB78300C0FEF5 /* TodayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C74AB4FE24E281D9007296F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C748821424DBE6A200EB1AEC /* TodayViewController.swift */,
+				C748822724DBE8ED00EB1AEC /* HistoryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C74AB50024E28202007296F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C748821624DBE6A200EB1AEC /* Main.storyboard */,
+				C748822924DC256800EB1AEC /* HistoryTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C74AB50324E282C4007296F0 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				C74AB4FB24E189D4007296F0 /* Utilities.swift */,
+				C74AB50124E282A7007296F0 /* Constants.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		C74AB50424E296F2007296F0 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				C74AB50524E2970E007296F0 /* LocalNotificationManager.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		C78D0E7A24DFB0AF00C0FEF5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				C78D0E7824DFAE4000C0FEF5 /* DBManager.swift */,
 			);
 			name = Database;
 			path = MediTracker/Database;
@@ -228,13 +277,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C748822A24DC256800EB1AEC /* HistoryTableViewCell.swift in Sources */,
+				C74AB50224E282A7007296F0 /* Constants.swift in Sources */,
 				C78D0E7E24DFDC5800C0FEF5 /* HistoryViewModel.swift in Sources */,
 				C748821524DBE6A200EB1AEC /* TodayViewController.swift in Sources */,
 				C748821124DBE6A200EB1AEC /* AppDelegate.swift in Sources */,
 				C748821324DBE6A200EB1AEC /* SceneDelegate.swift in Sources */,
+				C74AB50624E2970E007296F0 /* LocalNotificationManager.swift in Sources */,
 				C78D0E7C24DFB78300C0FEF5 /* TodayViewModel.swift in Sources */,
 				C748822824DBE8ED00EB1AEC /* HistoryViewController.swift in Sources */,
 				C748821B24DBE6A200EB1AEC /* MediTracker.xcdatamodeld in Sources */,
+				C74AB4FC24E189D4007296F0 /* Utilities.swift in Sources */,
 				C78D0E7924DFAE4000C0FEF5 /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

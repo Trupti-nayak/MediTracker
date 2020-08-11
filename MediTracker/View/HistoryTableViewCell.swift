@@ -66,10 +66,6 @@ class HistoryTableViewCell: UITableViewCell {
         
         self.dateLabel.text = medicineHistoryViewModel.date
         
-        if medicineHistoryViewModel.morning == nil || medicineHistoryViewModel.noon == nil || medicineHistoryViewModel.night == nil {
-            self.noonLabel.text = "No Meds Taken"
-        }
-        
         if let morning = medicineHistoryViewModel.morning{
             self.morningLabel.isHidden = false
             self.morningLabel.text = "Morning: \(morning)"
@@ -81,17 +77,22 @@ class HistoryTableViewCell: UITableViewCell {
         if let noon = medicineHistoryViewModel.noon{
             self.noonLabel.isHidden = false
             self.noonLabel.text = "After Noon: \(noon)"
+            self.noonLabel.textColor = .white
         }else{
             self.noonLabel.isHidden = true
         }
-
-        
         
         if let night = medicineHistoryViewModel.night{
             self.nightLabel.isHidden = false
             self.nightLabel.text = "Night: \(night)"
         }else{
             self.nightLabel.isHidden = true
+        }
+        
+        if medicineHistoryViewModel.morning == nil && medicineHistoryViewModel.noon == nil && medicineHistoryViewModel.night == nil {
+            self.noonLabel.isHidden = false
+            self.noonLabel.text = "No Meds Taken"
+            self.noonLabel.textColor = .red
         }
 
         self.scoreLabel.text = "\(medicineHistoryViewModel.score)"

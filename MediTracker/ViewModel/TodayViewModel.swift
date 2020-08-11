@@ -30,13 +30,13 @@ class TodayViewModel {
          let currentHour = calendar.component(.hour, from: date as Date)
          let hourInt = Int(currentHour.description)!
 
-         if hourInt >= 12 && hourInt <= 17 {
+         if hourInt >= 12 && hourInt <= 18 {
              greeting = Constants.GreetAfternoon
          }
          else if hourInt >= 5 && hourInt <= 12 {
              greeting = Constants.GreetMorning
          }
-         else if hourInt >= 18 && hourInt <= 24 {
+         else if hourInt >= 19 && hourInt <= 24 {
              greeting = Constants.GreetNight
          }
          else  {
@@ -49,6 +49,7 @@ class TodayViewModel {
         dateFormatter.dateFormat = Constants.dateFormat//"dd/MM/yyyy HH:mm"
         let dateWithTime:String = dateFormatter.string(from: Date())
         let dateArr = dateWithTime.components(separatedBy: " ")
+        UserDefaults.standard.set(dateWithTime, forKey: "StartDate") //StartDate
         return dateArr
     }
     
